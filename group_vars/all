@@ -1,0 +1,15 @@
+---
+project_name: devops
+### msql backup ###
+mysql_uat_db: devops_uat_db
+mysql_root_pass: Pwd4RBI600T
+date: "{{ lookup('pipe', 'date +%Y%m%d') }}"
+mysql_bak: "/data/backup/{{ project_name }}/db/{{ mysql_uat_db }}-{{ date }}.sql.gz"
+
+### source code backup ###
+sc_path: "/data/sites/live/public/{{ project_name }}"
+sc_des: "/data/backup/{{ project_name }}/sites/{{ project_name }}.zip"
+
+### backup path ###
+sc_bak_path: "/data/backup/{{ project_name }}/sites/"
+mysql_bak_path: "/data/backup/{{ project_name }}/db/"

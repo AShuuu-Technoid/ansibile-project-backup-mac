@@ -1,0 +1,12 @@
+---
+- name: "Ansible Create directory if not exists"
+  file:
+     path: "{{ sc_bak_path }}"
+     state: directory
+
+- name: "Source code backup"
+  archive:
+     path: "{{ sc_path }}"
+     dest: "{{ sc_des }}"
+     format: zip
+  become: yes
